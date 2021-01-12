@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: spring-composite-config
+
+  profiles:
+    active: awss3,jdbc,redis
+
+  ## GIT
+  cloud:
+    config:
+      server:
+
+## Redis
+        redis:
+          order: 3
+
+## JDBC
+        jdbc:
+          order: 2
+          sql: SELECT PROP_KEY, VALUE from PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
+
+## AWS S3
+        awss3:
+          bucket: cloud-config-eresh
+          region: us-east-1
+          order: 1
+
+    bus:
+      enabled: true
+
+encrypt:
+  #key: test
+  key-store:
+    location: file:///Users/ereshgorantla/apiEncryptionKey.jks
+    password: test12345
+    alias: apiEncryptionKey
