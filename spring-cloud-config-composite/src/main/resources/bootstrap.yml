@@ -29,7 +29,7 @@ spring:
       enabled: true
 
 encrypt:
-  #key: test
+  #key: foM}kcGHmxB7[C9
   key-store:
     location: file:///Users/ereshgorantla/apiEncryptionKey.jks
     password: test12345

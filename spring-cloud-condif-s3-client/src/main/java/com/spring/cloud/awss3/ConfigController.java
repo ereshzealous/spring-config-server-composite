@@ -26,12 +26,17 @@ public class ConfigController {
 	@Value("${configC}")
 	private String configC;
 
+	@Value("${configD}")
+	private String configD;
+
+
 	@GetMapping("/configs")
 	public Map<String, Object> getConfigData() {
 		Map<String, Object> objectMap = new HashMap<>();
 		objectMap.put("configA", configA);
 		objectMap.put("configB", configB);
 		objectMap.put("configC", configC);
+		objectMap.put("configD", configD);
 		return objectMap;
 	}
 }

@@ -26,6 +26,8 @@ public class SampleController {
 	@Value("${configC}")
 	private String configC;
 
+	@Value("${configD}")
+	private String configD;
 
 	@GetMapping("/configs")
 	public Map<String, Object> getConfigData() {
@@ -33,6 +35,7 @@ public class SampleController {
 		objectMap.put("configA", configA);
 		objectMap.put("configB", configB);
 		objectMap.put("configC", configC);
+		objectMap.put("configD", configD);
 		return objectMap;
 	}
 }
